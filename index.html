@@ -3,153 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> თამთა ხუციშვილი - Creative Portfolio</title>
-  <link rel="icon" type="image/png" href="./images/download.png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>თამთა ხუციშვილი - Creative Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./">
 </head>
 <body>
-  <aside class="loader" id="loader">
-    <div class="loader-content">
+  <!-- loader -->
+  <aside class="loader flex" id="loader">
+    <div class="loader-content flex">
       <div class="loader-text">INITIALIZING PORTFOLIO...</div>
       <div class="loader-bar">
         <div class="loader-fill"></div>
       </div>
     </div>
   </aside>
-  <nav class="nav">
-    <div class="logo">TAMTA.DEV</div>
+
+  <!-- navi -->
+  <nav class="nav flex">
+    <div class="logo flex">TAMTA.DEV</div>
     <div class="nav-links">
-      <button class="btn" onclick="scrollTo('#projects')"><span>PROJECTS</span></button>
-      <button class="btn" onclick="scrollTo('#skills')"><span>SKILLS</span></button>
-      <button class="btn" onclick="scrollTo('#contact')"><span>CONTACT</span></button>
-      <button class="theme-btn" onclick="toggleTheme()">🌓</button>
+      <button class="btn nav-btn" onclick="scrollToSection('projects')">PROJECTS</button>
+      <button class="btn nav-btn" onclick="scrollToSection('skills')">SKILLS</button>
+      <button class="btn nav-btn" onclick="scrollToSection('services')">SERVICES</button>
+      <button class="btn nav-btn" onclick="scrollToSection('contact')">CONTACT</button>
+      <button class="btn nav-btn" onclick="toggleTheme()">🌓</button>
     </div>
+    <div class="menu" id="burger" onclick="toggleMenu()">☰</div>
   </nav>
-  <!-- <main>
-      <section class="hero">
-        <div class="hero-grid">
-          <div class="hero-content">
-            <div class="hero-tag">● AVAILABLE FOR WORK</div>
-            <h1>თამთა ხუციშვილი</h1>
-            <p>პროგრამისტი, კიბერუსაფრთხოების სპეციალისტი და Creative Developer რომელიც ქმნის მომავლის ციფრულ გამოცდილებებს</p>
-            <div class="hero-btns">
-              <button class="btn btn-primary" onclick="scrollTo('#contact')">დაუკავშირდი →</button>
-              <button class="btn btn-outline" onclick="scrollTo('#projects')">ნახე პროექტები</button>
-            </div>
+
+  <!-- im.sect -->
+  <main>
+    <section class="hero">
+      <div class="hero-flex">
+        <div class="hero-content">
+          <div class="hero-tag">● AVAILABLE FOR WORK</div>
+          <h1>თამთა ხუციშვილი</h1>
+          <span>პროგრამისტი, კიბერუსაფრთხოების სპეციალისტი და Creative Developer რომელიც ქმნის მომავლის ციფრულ გამოცდილებებს</span>
+          <div class="hero-btns">
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">დაუკავშირდი →</button>
+            <button class="btn btn-outline" onclick="scrollToSection('projects')">ნახე პროექტები</button>
           </div>
-      <div class="about-profile">
-        <div class="profile-ring">
-          <div class="profile-image"></div>
         </div>
-      </div>    
+        <div class="about-profile flex">
+          <div class="profile-ring">
+            <div class="profile-image">👩‍💻</div>
+          </div>
         </div>
-      </section>
-      <section class="section" id="projects">
-        <div class="section-header">
-          <div class="section-tag">FEATURED WORK</div>
-          <h2 class="section-title">შერჩეული პროექტები</h2>
-          <p class="section-desc">იხილე ჩემი ბოლო პროექტები და შემოქმედებითი გადაწყვეტები</p>
-        </div>
-        <div class="projects" id="projectsGrid"></div>
-      </section> 
-    
-      <section class="section" id="skills"> 
-        <div class="section-header">
-          <div class="section-tag">EXPERTISE</div>
-          <h2 class="section-title">ტექნოლოგიები & უნარები</h2>
-          <p class="section-desc">ინსტრუმენტები და ტექნოლოგიები რომლებსაც ვიყენებ</p>
-        </div>
-        <div class="skills" id="skillsGrid"></div>
-      </section> 
-      <section class="section" id="services">
-        <div class="section-header">
-          <div class="section-tag">SECURITY SERVICES</div>
-          <h2 class="section-title">SecurityCheckup.ge</h2>
-          <p class="section-desc">პროფესიონალური კიბერუსაფრთხოების აუდიტი შენი ბიზნესისთვის</p>
-        </div>
-    
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-badge">BASIC</div>
-        <div class="service-price">200₾</div>
-        <h3 class="service-title">Security Scan</h3>
-        <ul class="service-features">
-          <li>✓ საიტის security სკანირება</li>
-          <li>✓ Password policy შემოწმება</li>
-          <li>✓ SSL სერთიფიკატის ვალიდაცია</li>
-          <li>✓ 5-გვერდიანი რეპორტი PDF</li>
-          <li>✓ 2 საათი audit</li>
-        </ul>
-        <button class="btn btn-outline" onclick="scrollTo('#contact')">არჩევა →</button>
+      </div>
+    </section>
+
+    <!-- project sect. -->
+    <section class="section" id="projects">
+      <div class="section-header">
+        <div class="section-tag">FEATURED WORK</div>
+        <h2 class="section-title">შერჩეული პროექტები</h2>
+        <p class="section-desc">იხილე ჩემი ბოლო პროექტები და შემოქმედებითი გადაწყვეტები</p>
+      </div>
+      <div class="projects" id="projectsGrid"></div>
+    </section>
+
+    <!-- skill sec. -->
+    <section class="section" id="skills">
+      <div class="section-header">
+        <div class="section-tag">EXPERTISE</div>
+        <h2 class="section-title">ტექნოლოგიები & უნარები</h2>
+        <p class="section-desc">ინსტრუმენტები და ტექნოლოგიები რომლებსაც ვიყენებ</p>
+      </div>
+      <div class="skills" id="skillsGrid"></div>
+    </section>
+
+    <!-- services sec. -->
+    <section class="section" id="services">
+      <div class="section-header">
+        <div class="section-tag">SECURITY SERVICES</div>
+        <h2 class="section-title">SecurityCheckup.ge</h2>
+        <p class="section-desc">პროფესიონალური კიბერუსაფრთხოების აუდიტი შენი ბიზნესისთვის</p>
       </div>
 
-      <div class="service-card featured">
-        <div class="service-badge popular">POPULAR</div>
-        <div class="service-price">350₾</div>
-        <h3 class="service-title">Complete Audit</h3>
-        <ul class="service-features">
-          <li>✓ ყველაფერი Basic-დან</li>
-          <li>✓ Email security audit</li>
-          <li>✓ Social media accounts review</li>
-          <li>✓ Employee security tips</li>
-          <li>✓ 10-გვერდიანი რეპორტი</li>
-          <li>✓ 30 წთ Zoom კონსულტაცია</li>
-        </ul>
-        <button class="btn btn-primary" onclick="scrollTo('#contact')">არჩევა →</button>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-badge">BASIC</div>
+          <div class="service-price">200₾</div>
+          <h3 class="service-title">Security Scan</h3>
+          <ul class="service-features">
+            <li>✓ საიტის security სკანირება</li>
+            <li>✓ Password policy შემოწმება</li>
+            <li>✓ SSL სერთიფიკატის ვალიდაცია</li>
+            <li>✓ 5-გვერდიანი რეპორტი PDF</li>
+            <li>✓ 2 საათი audit</li>
+          </ul>
+          <button class="btn btn-outline" onclick="scrollToSection('contact')">არჩევა →</button>
+        </div>
+
+        <div class="service-card featured">
+          <div class="service-badge popular">POPULAR</div>
+          <div class="service-price">350₾</div>
+          <h3 class="service-title">Complete Audit</h3>
+          <ul class="service-features">
+            <li>✓ ყველაფერი Basic-დან</li>
+            <li>✓ Email security audit</li>
+            <li>✓ Social media accounts review</li>
+            <li>✓ Employee security tips</li>
+            <li>✓ 10-გვერდიანი რეპორტი</li>
+            <li>✓ 30 წთ Zoom კონსულტაცია</li>
+          </ul>
+          <button class="btn btn-primary" onclick="scrollToSection('contact')">არჩევა →</button>
+        </div>
+
+        <div class="service-card">
+          <div class="service-badge">PREMIUM</div>
+          <div class="service-price">500₾</div>
+          <h3 class="service-title">Enterprise Shield</h3>
+          <ul class="service-features">
+            <li>✓ ყველაფერი Standard-დან</li>
+            <li>✓ Network vulnerability scan</li>
+            <li>✓ Cloud storage audit</li>
+            <li>✓ Custom security policy</li>
+            <li>✓ 15-გვერდიანი რეპორტი</li>
+            <li>✓ 1 საათი Zoom + 1 თვე follow-up</li>
+          </ul>
+          <button class="btn btn-outline" onclick="scrollToSection('contact')">არჩევა →</button>
+        </div>
       </div>
 
-      <div class="service-card">
-        <div class="service-badge">PREMIUM</div>
-        <div class="service-price">500₾</div>
-        <h3 class="service-title">Enterprise Shield</h3>
-        <ul class="service-features">
-          <li>✓ ყველაფერი Standard-დან</li>
-          <li>✓ Network vulnerability scan</li>
-          <li>✓ Cloud storage audit</li>
-          <li>✓ Custom security policy</li>
-          <li>✓ 15-გვერდიანი რეპორტი</li>
-          <li>✓ 1 საათი Zoom + 1 თვე follow-up</li>
-        </ul>
-        <button class="btn btn-outline" onclick="scrollTo('#contact')">არჩევა →</button>
+      <div class="service-cta">
+        <h3>არ იცი რომელი პაკეტი გჭირდება?</h3>
+        <p>მიიღე უფასო 15-წუთიანი კონსულტაცია და ვეხმარებით სწორი არჩევანის გაკეთებაში</p>
+        <button class="btn btn-primary" onclick="scrollToSection('contact')">უფასო კონსულტაცია →</button>
       </div>
-    </div>
+    </section>
 
-    <div class="service-cta">
-      <h3>არ იცი რომელი პაკეტი გჭირდება?</h3>
-      <p>მიიღე უფასო 15-წუთიანი კონსულტაცია და ვეხმარებით სწორი არჩევანის გაკეთებაში</p>
-      <button class="btn btn-primary" onclick="scrollTo('#contact')">უფასო კონსულტაცია →</button>
-    </div>
-  </section>
-    
-      <section class="section" id="contact">
-        <div class="section-header">
-          <div class="section-tag">GET IN TOUCH</div>
-          <h2 class="section-title">მოდი ვითანამშრომლოთ</h2>
-          <p class="section-desc">გაქვს საინტერესო პროექტი? მოდი ერთად შევქმნათ რაღაც შესანიშნავი</p>
-        </div>
-        <div class="contact">
-          <form class="contact-form" onsubmit="handleSubmit(event)">
-            <div class="form-group">
-              <input type="text" placeholder="შენი სახელი" required>
-            </div>
-            <div class="form-group">
-              <input type="email" placeholder="ელ. ფოსტა" required>
-            </div>
-            <div class="form-group">
-              <textarea placeholder="მოგვწერე შენი იდეის შესახებ..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%">გაგზავნა →</button>
-          </form>
-        </div>
-      </section>
-  </main> -->
-
-  <!-- <footer class="footer">
-    <p>© 2024 TAMTA KHUTSISHVILI • CRAFTED WITH ❤️ & CODE</p>
-  </footer> -->
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- contact sect. -->
+    <section class="section" id="contact">
+      <div class="section-header">
+        <div class="section-tag">GET IN TOUCH</div>
+        <h2 class="section-title">მოდი ვითანამშრომლოთ</h2>
+        <p class="section-desc">გაქვს საინტერესო პროექტი? მოდი ერთად შევქმნათ რაღაც შესანიშნავი</p>
+      </div>
+      <div class="contact">
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="შენი სახელი" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="ელ. ფოსტა" required>
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="მოგვწერე შენი იდეის შესახებ..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%">გაგზავნა →</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="flex">
+    <span>© 2024 TAMTA KHUTSISHVILI • CRAFTED WITH ❤️ & CODE</span>
+  </footer>
 <script src="./script.js"></script>
-</html>
+</body>
