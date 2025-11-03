@@ -3,9 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>თამთა ხუციშვილი - Creative Portfolio</title>
+  <!-- SEO -->
+  <meta name="description" content="თამთა ხუციშვილი — პროგრამისტი, კიბერუსაფრთხოების სპეციალისტი და Creative Developer. Portfolio, projects, skills, services, contact.">
+  <meta name="keywords" content="Tamta Khutsishvili, Programmer, Cyber Security, Developer, Portfolio, React, Python, JS">
+  <meta name="author" content="Tamta Khutsishvili">
+  
+  <!-- security -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;">
+  
+  <title>თამთა ხუციშვილი</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <!-- loader -->
@@ -22,10 +30,10 @@
   <nav class="nav flex">
     <div class="logo flex">TAMTA.DEV</div>
     <div class="nav-links">
-      <button class="btn nav-btn" onclick="scrollToSection('projects')">PROJECTS</button>
-      <button class="btn nav-btn" onclick="scrollToSection('skills')">SKILLS</button>
-      <button class="btn nav-btn" onclick="scrollToSection('services')">SERVICES</button>
-      <button class="btn nav-btn" onclick="scrollToSection('contact')">CONTACT</button>
+      <button class="btn nav-btn" id="projectsBtn">PROJECTS</button>
+      <button class="btn nav-btn" id="skillsBtn">SKILLS</button>
+      <button class="btn nav-btn" id="servicesBtn">SERVICES</button>
+      <button class="btn nav-btn" id="contactBtn">CONTACT</button>
       <button class="btn nav-btn" onclick="toggleTheme()">🌓</button>
     </div>
     <div class="menu" id="burger" onclick="toggleMenu()">☰</div>
@@ -46,7 +54,7 @@
         </div>
         <div class="about-profile flex">
           <div class="profile-ring">
-            <div class="profile-image">👩‍💻</div>
+            <div class="profile-image"></div>
           </div>
         </div>
       </div>
@@ -56,8 +64,8 @@
     <section class="section" id="projects">
       <div class="section-header">
         <div class="section-tag">FEATURED WORK</div>
-        <h2 class="section-title">შერჩეული პროექტები</h2>
-        <p class="section-desc">იხილე ჩემი ბოლო პროექტები და შემოქმედებითი გადაწყვეტები</p>
+        <h2 class="section-title">შესრულებული პროექტები</h2>
+        <p class="section-desc">იხილეთ ბოლო პროექტები და შემოქმედებითი გადაწყვეტები</p>
       </div>
       <div class="projects" id="projectsGrid"></div>
     </section>
@@ -128,7 +136,7 @@
 
       <div class="service-cta">
         <h3>არ იცი რომელი პაკეტი გჭირდება?</h3>
-        <p>მიიღე უფასო 15-წუთიანი კონსულტაცია და ვეხმარებით სწორი არჩევანის გაკეთებაში</p>
+        <p>მიიღე უფასო 15-წუთიანი კონსულტაცია და დაგეხმარებით სწორი არჩევანის გაკეთებაში</p>
         <button class="btn btn-primary" onclick="scrollToSection('contact')">უფასო კონსულტაცია →</button>
       </div>
     </section>
@@ -138,10 +146,10 @@
       <div class="section-header">
         <div class="section-tag">GET IN TOUCH</div>
         <h2 class="section-title">მოდი ვითანამშრომლოთ</h2>
-        <p class="section-desc">გაქვს საინტერესო პროექტი? მოდი ერთად შევქმნათ რაღაც შესანიშნავი</p>
+        <p class="section-desc">გაქვს საინტერესო პროექტი? მოდი ერთად შევქმნათ პროფესიონალური და ინოვაციური გზით</p>
       </div>
       <div class="contact">
-        <form class="contact-form" onsubmit="handleSubmit(event)">
+        <form class="contact-form" onsubmit="handleSubmit(event)" id="contactForm">
           <div class="form-group">
             <input type="text" name="name" placeholder="შენი სახელი" required>
           </div>
@@ -158,6 +166,22 @@
   </main>
   <footer class="flex">
     <span>© 2024 TAMTA KHUTSISHVILI • CRAFTED WITH ❤️ & CODE</span>
+    <a href="https://www.linkedin.com/in/tamta-khutsishvili-85395b343/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </footer>
-<script src="./script.js"></script>
+
+<!-- Structured data for SEO / Google JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Tamta Khutsishvili",
+  "jobTitle": "Programmer & Cyber Security Specialist",
+  "url": "https://tamta.ge",
+  "sameAs": [
+    "https://www.linkedin.com/in/tamta-khutsishvili-85395b343/",
+    "https://github.com/CyberCoder25"
+  ]
+}
+</script>
+<script src="./script.js" defer></script>
 </body>
