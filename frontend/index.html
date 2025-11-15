@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#007a5e">
+  <meta name="color-scheme" content="light dark">
+  
+  <!-- seo and meta -->
+  <meta name="description" content="თამთა ხუციშვილი — პროგრამისტი, კიბერუსაფრთხოების სპეციალისტი. Portfolio, projects, skills, services, contact.">
+  <meta name="keywords" content="Tamta Khutsishvili, Programmer, Cyber Security, Developer, Portfolio, React, Python, JavaScript">
+  <meta name="author" content="Tamta Khutsishvili">
+  
+  <!-- fonts with preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./style.css">
+  <title>თამთა ხუციშვილი - Portfolio</title>
+</head>
+<body>
+
+  <!-- loader with accessibility -->
+  <aside class="loader flex hide" id="loader" aria-label="Loading content" aria-hidden="true">
+    <div class="loader-content flex">
+      <div class="loader-text">INITIALIZING PORTFOLIO...</div>
+      <div class="loader-bar">
+        <div class="loader-fill"></div>
+      </div>
+    </div>
+  </aside>
+  
+  <!-- navigation with enhanced accessibility -->
+  <nav class="nav flex" role="navigation" aria-label="Main navigation">
+    <div class="logo flex" aria-label="Tamta.Dev">TAMTA.DEV</div>
+    <div class="nav-links" role="menubar">
+      <button class="btn nav-btn" data-scroll="projects" id="projBtn" role="menuitem" aria-label="Go to projects section"></button>
+      <button class="btn nav-btn" data-scroll="skills" id="ski" role="menuitem" aria-label="Go to skills section"></button>
+      <button class="btn nav-btn" data-scroll="services" id="serv" role="menuitem" aria-label="Go to services section"></button>
+      <button class="btn nav-btn" data-scroll="contact" id="con" role="menuitem" aria-label="Go to contact section"></button>
+      <button class="btn nav-btn" id="themeToggle" aria-label="Toggle dark/light theme" aria-pressed="false"></button>
+      <button class="btn nav-btn" id="langToggle" aria-label="Switch language" aria-pressed="false">
+        <span id="langFlag" aria-hidden="true">🇬🇪</span> <span id="langText">EN</span>
+      </button>
+    </div>
+    <button id="burger" class="menu" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
+    </button>
+  </nav>
+
+  <!-- main content with accessibility -->
+  <main id="mainContent" role="main">
+    <!-- hero section -->
+    <section class="hero" id="hero">
+      <div class="hero-flex">
+        <div class="hero-content">
+          <div class="hero-tag" id="lighting" aria-live="polite"></div>
+          <h1 id="insteadName"></h1>
+          <span id="heroDesc" role="doc-subtitle"></span>
+          <div class="hero-btns">
+            <button class="btn btn-primary" id="contactTitle" data-scroll="contact" aria-label="Scroll to contact form"></button>
+            <button class="btn btn-outline" id="projectBtn" data-scroll="projects" aria-label="View projects"></button>
+          </div>
+        </div>
+        <div class="about-profile flex" aria-hidden="true">
+          <div class="profile-ring">
+            <div class="profile-image"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- projects section -->
+    <section class="section" id="projects" aria-labelledby="projectsTitle">
+      <div class="section-header">
+        <div class="section-tag">[ PORTFOLIO ]</div>
+        <h2 class="section-title" id="projectsTitle"></h2>
+        <p class="section-desc" id="projectsIntro"></p>
+      </div>
+      <div class="projects" id="projectsGrid" role="region" aria-label="Projects list"></div>
+    </section>
+
+    <!-- skills section -->
+    <section class="section" id="skills" aria-labelledby="skillsTitle">
+      <div class="section-header">
+        <div class="section-tag">[ SKILLS ]</div>
+        <h2 class="section-title" id="skillsTitle"></h2>
+        <p class="section-desc" id="skillsText"></p>
+      </div>
+      <div class="skills" id="skillsGrid"></div>
+    </section>
+
+    <!-- services -->
+<section id="services" class="section">
+  <div class="section-header">
+    <div class="section-tag">[ SERVICES ]</div>
+    <h2 class="section-title" id="servTitle"></h2>
+    <p class="section-desc" id="servText"></p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div>
+        <span class="service-badge">BASIC</span>
+        <div class="service-price">$500</div>
+        <h3 class="service-title">Landing Page</h3>
+        <ul class="service-features">
+          <li>✓ Responsive Design</li>
+          <li>✓ Fast Loading Speed</li>
+          <li>✓ SEO Optimization</li>
+          <li>✓ 1 Month of Free Support</li>
+        </ul>
+      </div>
+      <button class="btn btn-outline" data-scroll="contact">Order Now</button>
+    </div>
+
+    <div class="service-card featured">
+      <div>
+        <span class="service-badge popular">POPULAR</span>
+        <div class="service-price">$2000</div>
+        <h3 class="service-title">Full-Stack App</h3>
+        <ul class="service-features">
+          <li>✓ Backend + Frontend</li>
+          <li>✓ Database Design</li>
+          <li>✓ API Integration</li>
+          <li>✓ Admin Panel</li>
+          <li>✓ 3 Months of Support</li>
+        </ul>
+      </div>
+      <button class="btn btn-primary" data-scroll="contact">Order Now</button>
+    </div>
+
+    <div class="service-card">
+      <div>
+        <span class="service-badge">PREMIUM</span>
+        <div class="service-price">$5000</div>
+        <h3 class="service-title">Enterprise Solution</h3>
+        <ul class="service-features">
+          <li>✓ Complete System</li>
+          <li>✓ Security Audit</li>
+          <li>✓ Cloud Deployment</li>
+          <li>✓ CI/CD Pipeline</li>
+          <li>✓ 6 Months of Support</li>
+        </ul>
+      </div>
+      <button class="btn btn-outline" data-scroll="contact">Order Now</button>
+    </div>
+  </div>
+
+  <!-- service cta section -->
+  <div class="service-cta">
+    <h3 id="qustionTitle"></h3>
+    <p id="questionText"></p>
+    <button class="btn btn-primary" data-scroll="contact" id="contBTN" aria-label="Get consultation"></button>
+  </div>
+</section>
+
+    <!-- contact section -->
+<section class="section" id="contact" aria-labelledby="cont">
+  <div class="section-header">
+    <div class="section-tag">[ CONTACT ]</div>
+    <h2 class="section-title" id="cont"></h2>
+    <p class="section-desc" id="contText"></p>
+  </div>
+  <div class="contact">
+    <form class="contact-form" id="contactForm" role="form" novalidate>
+      <div class="form-group">
+        <label for="name" class="sr-only">Name</label>
+        <input 
+          type="text" 
+          id="name"
+          name="name" 
+          placeholder="სახელი" 
+          required 
+          minlength="2" 
+          maxlength="100"
+          aria-label="Your name"
+          aria-required="true">
+      </div>
+      <div class="form-group">
+        <label for="email" class="sr-only">Email</label>
+        <input 
+          type="email" 
+          id="email"
+          name="email" 
+          placeholder="ელ. ფოსტა" 
+          required
+          aria-label="Your email address"
+          aria-required="true">
+      </div>
+      <div class="form-group">
+        <label for="message" class="sr-only">Message</label>
+        <textarea 
+          id="message"
+          name="message" 
+          placeholder="მოგვწერეთ თქვენი ბიზნესის შესახებ..." 
+          required 
+          minlength="10" 
+          maxlength="1000"
+          aria-label="Your message"
+          aria-required="true"></textarea>
+      </div>
+      <!-- form submit button -->
+      <button type="submit" class="btn btn-primary btn-full" id="sendBTN" aria-label="Send message">
+        გაგზავნა →
+      </button>
+    </form>
+  </div>
+</section>
+  </main>
+
+  <!-- footer with accessible links -->
+  <footer class="flex" role="contentinfo">
+    <span>© 2025 Tamta Khutsishvili — Engineered with Precision, Code & Cyber Security.</span>
+    <a href="https://www.linkedin.com/in/tamta-khutsishvili-85395b343/" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">LinkedIn</a>
+  </footer>
+
+  <!-- toast container for accessible notifications -->
+  <div id="toastContainer" aria-live="polite" aria-atomic="true" role="region"></div>
+
+  <!-- external scripts for csp compliance -->
+  <script src="./ld-json.js" defer></script>
+  <script src="./config.js"></script>
+  <script src="./script.js" defer></script>
+</body>
+</html>
