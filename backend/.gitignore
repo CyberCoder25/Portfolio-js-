@@ -1,0 +1,7 @@
+# Ignore environment files with secrets
+.env
+
+node_modules
+.DS_Store
+npm-debug.log
+logs
